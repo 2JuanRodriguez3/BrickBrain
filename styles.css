@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght=300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 * {
   margin: 0;
@@ -7,10 +7,15 @@
   font-family: 'Poppins', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: linear-gradient(135deg, #111, #1a1a1a);
   color: white;
 }
+
 
 /* NAV */
 nav {
@@ -18,9 +23,9 @@ nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Vertically centers logo and links */
-  padding: 15px 40px;  /* Slightly reduced top/bottom padding for image fit */
-  background: rgba(0,0,0,0.75); /* Slightly darker for better navigation visibility */
+  align-items: center;
+  padding: 15px 40px;
+  background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(10px);
   z-index: 1000;
 }
@@ -36,18 +41,17 @@ nav a:hover {
   color: #d4c576;
 }
 
-/* Updated Logo container to clean up text sizing if still used */
 .logo {
   display: flex;
   align-items: center;
 }
 
-/* New: Styles the navbar logo image */
 .logo-img {
-  height: 55px;       /* Increased from 35px to make it stand out in the nav */
-  width: auto;        /* Keeps the proportions perfect */
+  height: 55px;
+  width: auto;
   display: block;
 }
+
 
 /* HERO */
 .hero {
@@ -61,12 +65,13 @@ nav a:hover {
 }
 
 .hero-logo {
-  max-width: 450px;   /* Increased from 280px to make it prominent */
+  max-width: 450px;
   width: 100%;
   height: auto;
   margin-bottom: 20px;
   filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.5));
 }
+
 .hero h1 {
   font-size: 4rem;
   background: linear-gradient(to right, #ffd500, #d71920);
@@ -85,22 +90,26 @@ nav a:hover {
   padding: 12px 30px;
   background: #d71920;
   border: none;
-  border-radius: 8px; /* Added slight rounding to match contact buttons */
+  border-radius: 8px;
   color: white;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.2s ease;
 }
 
 .hero button:hover {
   background: #ffd500;
   color: black;
-  transform: translateY(-2px); /* Subtle lift effect */
+  transform: translateY(-2px);
 }
+
 
 /* SECTIONS */
 .section {
-  padding: 100px 20px 60px 20px; /* Adjusted padding to ensure fixed nav doesn't overlap headers */
+  padding: 100px 20px 60px 20px;
   max-width: 900px;
   margin: auto;
 }
@@ -110,13 +119,15 @@ h2 {
   margin-bottom: 20px;
 }
 
+
 /* CARD */
 .card {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   padding: 25px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.05); /* Soft border to make cards pop */
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
+
 
 /* TIMELINE */
 .timeline {
@@ -135,6 +146,70 @@ h2 {
   margin-bottom: 5px;
 }
 
+
+/* SIP PROGRESS */
+.progress-card {
+  border-left: 4px solid #ffd500;
+}
+
+.progress-date {
+  color: #ffd500;
+  font-size: 1.25rem;
+  margin-bottom: 18px;
+}
+
+/*
+  Instructor requirement:
+  Progress and updates since SIP 311 are highlighted in yellow.
+*/
+.progress-update {
+  color: #ffd500;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.progress-update:last-child {
+  margin-bottom: 0;
+}
+
+
+/* SIP BRIEF */
+.brief-card {
+  margin-top: 25px;
+  border-left: 4px solid #d71920;
+}
+
+.brief-card h3 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.brief-card p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.brief-button {
+  display: inline-block;
+  padding: 12px 22px;
+  background: #d71920;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.brief-button:hover {
+  background: #ffd500;
+  color: black;
+  transform: translateY(-2px);
+}
+
+
 /* CONTACT */
 .social-badges {
   margin: 20px 0;
@@ -145,7 +220,7 @@ h2 {
 .badge-link {
   color: white;
   padding: 8px 16px;
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   text-decoration: none;
@@ -174,7 +249,6 @@ h2 {
   font-family: 'Poppins', sans-serif;
 }
 
-/* Subtle focus effect for form inputs */
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
@@ -194,13 +268,16 @@ h2 {
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
 .contact-form button:hover {
   background: #ffd500;
   color: black;
 }
+
 
 /* FOOTER */
 footer {
@@ -210,6 +287,7 @@ footer {
   margin-top: 60px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
+
 
 /* ANIMATION */
 .fade-in {
@@ -223,6 +301,7 @@ footer {
   transform: translateY(0);
 }
 
+
 /* VISUALS GRID */
 .visuals-grid {
   display: grid;
@@ -235,19 +314,20 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-/* Subtle interactive pop when hovering over a visual card */
 .visual-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(215, 25, 32, 0.15); /* Soft red theme glow */
+  box-shadow: 0 10px 20px rgba(215, 25, 32, 0.15);
 }
 
 .image-placeholder {
   width: 100%;
   height: 220px;
-  background: rgba(255, 255, 255, 0.03); /* Fallback background if image is missing */
+  background: rgba(255, 255, 255, 0.03);
   border-radius: 8px;
   overflow: hidden;
   display: flex;
@@ -259,7 +339,7 @@ footer {
 .demo-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures your sketches/screenshots scale perfectly without stretching */
+  object-fit: cover;
   display: block;
 }
 
@@ -268,34 +348,34 @@ footer {
   font-size: 1.2rem;
 }
 
+
 /* LIGHTBOX MODAL */
 .demo-image {
-  cursor: zoom-in; /* Changes cursor to a magnifying glass on hover */
+  cursor: zoom-in;
   transition: opacity 0.3s ease;
 }
 
 .demo-image:hover {
-  opacity: 0.85; /* Subtle dim effect to indicate clickability */
+  opacity: 0.85;
 }
 
 .lightbox {
   position: fixed;
-  z-index: 2000; /* Sits completely on top of everything, including the nav */
+  z-index: 2000;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.9); /* Dark overlay */
+  background-color: rgba(0, 0, 0, 0.9);
   backdrop-filter: blur(8px);
   display: flex;
   justify-content: center;
   align-items: center;
-  pointer-events: none; /* Disables interaction when hidden */
+  pointer-events: none;
   opacity: 0;
   transition: opacity 0.4s ease;
 }
 
-/* Activates the popup when triggered by JavaScript */
 .lightbox.active {
   pointer-events: auto;
   opacity: 1;
@@ -308,9 +388,41 @@ footer {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   transform: scale(0.9);
   transition: transform 0.4s ease;
-  cursor: zoom-out; /* Changes cursor to signal clicking closes it */
+  cursor: zoom-out;
 }
 
 .lightbox.active img {
-  transform: scale(1); /* Smoothly scales up into place */
+  transform: scale(1);
+}
+
+
+/* MOBILE */
+@media (max-width: 850px) {
+
+  nav {
+    padding: 12px 20px;
+  }
+
+  nav .links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  nav a {
+    margin: 4px 6px;
+    font-size: 0.85rem;
+  }
+
+  .logo-img {
+    height: 40px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .social-badges {
+    flex-wrap: wrap;
+  }
 }
