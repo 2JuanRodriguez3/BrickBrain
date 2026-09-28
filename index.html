@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>BrickBrain - Intelligent LEGO Build System</title>
+
   <link rel="stylesheet" href="styles.css">
 
   <style>
-    /* Quick inline styles to ensure the logo images scale nicely */
+
+    /* Logo Images */
     .logo-img {
       height: 40px;
       vertical-align: middle;
@@ -19,320 +23,718 @@
       height: auto;
       margin-bottom: 20px;
     }
+
+
+    /* Progress Screenshots */
+    .progress-images {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .progress-image-item {
+      text-align: center;
+    }
+
+    .progress-image-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .image-caption {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+      line-height: 1.5;
+    }
+
   </style>
+
 </head>
+
 
 <body>
 
-  <!-- NAVIGATION -->
+
+  <!-- =========================================
+       NAVIGATION
+  ========================================== -->
+
   <nav>
+
     <div class="logo">
-      <img src="BrickBrain logo.png" alt="BrickBrain Logo" class="logo-img">
+
+      <img
+        src="BrickBrain logo.png"
+        alt="BrickBrain Logo"
+        class="logo-img">
+
     </div>
 
+
     <div class="links">
+
       <a href="#home">Home</a>
+
       <a href="#about">About Me</a>
+
       <a href="#problem">Problem</a>
+
       <a href="#solution">Solution</a>
+
       <a href="#process">Process</a>
+
       <a href="#progress">Progress</a>
+
       <a href="#visuals">Visuals</a>
+
       <a href="#contact">Contact</a>
+
     </div>
+
   </nav>
 
 
-  <!-- HOME -->
-  <section id="home" class="hero">
-    <h1>BrickBrain</h1>
 
-    <p>Intelligent LEGO Build System</p>
-    <p>Juan Rodriguez | SIP 311</p>
+  <!-- =========================================
+       HOME
+  ========================================== -->
 
-    <button onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+  <section
+    id="home"
+    class="hero">
+
+    <h1>
+      BrickBrain
+    </h1>
+
+    <p>
+      Intelligent LEGO Build System
+    </p>
+
+    <p>
+      Juan Rodriguez | SIP 408
+    </p>
+
+
+    <button
+      onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+
       Explore Project
+
     </button>
+
   </section>
 
 
-  <!-- ABOUT -->
-  <section id="about" class="section fade-in">
-    <h2>About Me</h2>
+
+  <!-- =========================================
+       ABOUT
+  ========================================== -->
+
+  <section
+    id="about"
+    class="section fade-in">
+
+    <h2>
+      About Me
+    </h2>
+
 
     <div class="card">
+
       <p>
+
         Hi, I'm <strong>Juan Rodriguez</strong>, an Advanced Computer Science
-        student at UAT with a passion for AI, software development, and LEGO building.
+        student at UAT with a passion for AI, software development, and LEGO
+        building.
+
       </p>
+
     </div>
+
   </section>
 
 
-  <!-- PROBLEM -->
-  <section id="problem" class="section fade-in">
-    <h2>Problem</h2>
+
+  <!-- =========================================
+       PROBLEM
+  ========================================== -->
+
+  <section
+    id="problem"
+    class="section fade-in">
+
+    <h2>
+      Problem
+    </h2>
+
 
     <div class="card">
+
       <p>
-        LEGO enthusiasts often have large collections of unused or leftover pieces.
-        Existing tools focus on official sets and instructions, not creative reuse
-        of inventory.
+
+        LEGO enthusiasts often have large collections of unused or leftover
+        pieces. Existing tools focus on official sets and instructions, not
+        creative reuse of inventory.
+
       </p>
+
     </div>
+
   </section>
 
 
-  <!-- SOLUTION -->
-  <section id="solution" class="section fade-in">
-    <h2>Innovation / Solution</h2>
+
+  <!-- =========================================
+       SOLUTION
+  ========================================== -->
+
+  <section
+    id="solution"
+    class="section fade-in">
+
+    <h2>
+      Innovation / Solution
+    </h2>
+
 
     <div class="card">
+
       <p>
-        BrickBrain combines artificial intelligence and inventory management with
-        LEGO creativity to help users discover new and unique build possibilities
-        from their existing collections.
+
+        BrickBrain combines artificial intelligence and inventory management
+        with LEGO creativity to help users discover new and unique build
+        possibilities from their existing collections.
+
       </p>
+
     </div>
+
   </section>
 
 
-  <!-- DESIGN PROCESS -->
-  <section id="process" class="section fade-in">
-    <h2>Design Process</h2>
+
+  <!-- =========================================
+       DESIGN PROCESS
+  ========================================== -->
+
+  <section
+    id="process"
+    class="section fade-in">
+
+    <h2>
+      Design Process
+    </h2>
+
 
     <div class="timeline">
 
-      <div class="step">
-        <h4>Research</h4>
-        <p>
-          Studied LEGO Builder and BrickLink Studio to identify gaps in creative
-          generation tools.
-        </p>
-      </div>
+
+      <!-- RESEARCH -->
 
       <div class="step">
-        <h4>Planning</h4>
+
+        <h4>
+          Research
+        </h4>
+
         <p>
+
+          Studied LEGO Builder and BrickLink Studio to identify gaps in
+          creative generation tools.
+
+        </p>
+
+      </div>
+
+
+      <!-- PLANNING -->
+
+      <div class="step">
+
+        <h4>
+          Planning
+        </h4>
+
+        <p>
+
           Designed inventory system and AI recommendation structure.
+
         </p>
+
       </div>
 
+
+      <!-- DEVELOPMENT -->
+
       <div class="step">
-        <h4>Development</h4>
+
+        <h4>
+          Development
+        </h4>
+
         <p>
+
           Built responsive web prototype using HTML, CSS, and JavaScript.
+
         </p>
+
       </div>
 
+
+      <!-- TESTING -->
+
       <div class="step">
-        <h4>Testing</h4>
+
+        <h4>
+          Testing
+        </h4>
+
         <p>
+
           Improved suggestion logic and UI experience for usability.
+
         </p>
+
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- SIP PROGRESS -->
-  <section id="progress" class="section fade-in">
-    <h2>Current SIP Progress</h2>
+
+  <!-- =========================================
+       SIP PROGRESS
+  ========================================== -->
+
+  <section
+    id="progress"
+    class="section fade-in">
+
+    <h2>
+      Current SIP Progress
+    </h2>
+
+
+
+    <!-- =====================================
+         SEPTEMBER 27 UPDATE
+    ====================================== -->
 
     <div class="card progress-card">
 
       <h3 class="progress-date">
-        September 13, 2026 - SIP Progress Update
+
+        September 27, 2026 - Adaptive Challenge System Development
+
       </h3>
 
-      <p class="progress-update">
-        Since finishing SIP 311, I have continued refining how I want BrickBrain to proceed and how I want this next stage of development to be. BrickBrain has evolved into an adaptive LEGO design coach that will
-        use a user's LEGO interests, selected difficulty, and inventory to make personalized challenges.
-      </p>
 
       <p class="progress-update">
-        My current focus is planning the inventory management system as well as the adaptive challenge generation system. These two will serve as the main components around BrickBrain, allowing the users to not
-        only receive challenges but also manage their inventory all within one system.
+
+        This week I made major progress on the BrickBrain prototype by
+        developing the Adaptive Challenge System. Users can now generate
+        challenges using BrickBrain's recommended difficulty or customize
+        the difficulty and build type themselves.
+
       </p>
 
+
       <p class="progress-update">
-        BrickBrain is in it's development stage and isn't complete yet. My next steps in this progress are to develop the inventory system, design the challenge generation logic, and continue to improve the
-        user interface. Future progress that is made will be documented and put here to keep track of the early and end stages of BrickBrain.
+
+        After completing a challenge, users can rate it as Too Easy,
+        Just Right, or Too Hard. BrickBrain uses this feedback to adjust
+        its recommended difficulty. The prototype also tracks completed
+        challenges, feedback, statistics, and recent challenge history
+        between sessions.
+
+      </p>
+
+
+      <p class="progress-update">
+
+        My next major step is developing the Inventory Management System
+        and connecting it to Adaptive Challenges so BrickBrain can generate
+        challenges based on both the user's progress and the LEGO pieces
+        they own.
+
+      </p>
+
+
+
+      <!-- PROTOTYPE SCREENSHOTS -->
+
+      <div class="progress-images">
+
+
+        <!-- DASHBOARD -->
+
+        <div class="progress-image-item">
+
+          <img
+            src="Dashboard.png"
+            alt="BrickBrain Prototype Dashboard"
+            class="demo-image">
+
+          <p class="image-caption">
+
+            Current BrickBrain prototype dashboard.
+
+          </p>
+
+        </div>
+
+
+
+        <!-- ADAPTIVE CHALLENGES -->
+
+        <div class="progress-image-item">
+
+          <img
+            src="Challenge.png"
+            alt="BrickBrain Adaptive Challenge System"
+            class="demo-image">
+
+          <p class="image-caption">
+
+            Adaptive Challenge System showing challenge generation,
+            difficulty recommendations, statistics, and feedback.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         SEPTEMBER 13 UPDATE
+    ====================================== -->
+
+    <div class="card progress-card">
+
+      <h3 class="progress-date">
+
+        September 13, 2026 - SIP Progress Update
+
+      </h3>
+
+
+      <p class="progress-update">
+
+        Since finishing SIP 311, I have continued refining how I want
+        BrickBrain to proceed and how I want this next stage of development
+        to be. BrickBrain has evolved into an adaptive LEGO design coach
+        that will use a user's LEGO interests, selected difficulty, and
+        inventory to make personalized challenges.
+
+      </p>
+
+
+      <p class="progress-update">
+
+        My current focus is planning the inventory management system as
+        well as the adaptive challenge generation system. These two will
+        serve as the main components around BrickBrain, allowing the users
+        to not only receive challenges but also manage their inventory all
+        within one system.
+
+      </p>
+
+
+      <p class="progress-update">
+
+        BrickBrain is in its development stage and isn't complete yet.
+        My next steps in this progress are to develop the inventory system,
+        design the challenge generation logic, and continue to improve the
+        user interface. Future progress that is made will be documented and
+        put here to keep track of the early and end stages of BrickBrain.
+
       </p>
 
     </div>
 
 
-    <!-- SIP BRIEF -->
+
+    <!-- =====================================
+         SIP BRIEF
+    ====================================== -->
+
     <div class="card brief-card">
 
-      <h3>Current SIP Brief</h3>
+      <h3>
+        Current SIP Brief
+      </h3>
+
 
       <p>
-        The current version of my BrickBrain SIP Brief can be viewed using the
-        link below.
+
+        The current version of my BrickBrain SIP Brief can be viewed
+        using the link below.
+
       </p>
 
-      <!-- Replace YOUR-SIP-BRIEF-LINK-HERE with your actual online SIP Brief link -->
+
       <a
-      href="BrickBrain_SIP_Brief.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="brief-button">
-      View Current SIP Brief
-  </a>
+        href="BrickBrain_SIP_Brief.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="brief-button">
+
+        View Current SIP Brief
+
       </a>
 
     </div>
+
   </section>
 
 
-  <!-- PROJECT VISUALS -->
-  <section id="visuals" class="section fade-in">
-    <h2>Project Visuals & Demos</h2>
+
+  <!-- =========================================
+       PROJECT VISUALS
+  ========================================== -->
+
+  <section
+    id="visuals"
+    class="section fade-in">
+
+    <h2>
+      Project Visuals & Demos
+    </h2>
+
 
     <div class="visuals-grid">
 
-      <!-- Card 1: Sketch/Ideation -->
+
+      <!-- INITIAL SKETCH -->
+
       <div class="card visual-card">
 
         <div class="image-placeholder">
+
           <img
             src="BrickBrain Sketch.jpg"
             alt="Initial Concept Sketch"
             class="demo-image">
+
         </div>
 
-        <h4>Initial Concept Sketches</h4>
+
+        <h4>
+          Initial Concept Sketches
+        </h4>
+
 
         <p>
-          Early ideation mapping out how the brick inventories can be managed
-          and how pieces will be reviewed for creative suggestions.
+
+          Early ideation mapping out how the brick inventories can be
+          managed and how pieces will be reviewed for creative suggestions.
+
         </p>
 
       </div>
 
 
-      <!-- Card 2: UI Dashboard Demo -->
+
+      <!-- UI DASHBOARD -->
+
       <div class="card visual-card">
 
         <div class="image-placeholder">
+
           <img
             src="BrickBrain.png"
             alt="UI Dashboard Demo"
             class="demo-image">
+
         </div>
 
-        <h4>Centralized UI Dashboard</h4>
+
+        <h4>
+          Centralized UI Dashboard
+        </h4>
+
 
         <p>
-          A preview of the clean user interface, featuring interactive grid
-          layouts and live brick inventory tracking.
+
+          A preview of the clean user interface, featuring interactive
+          grid layouts and live brick inventory tracking.
+
         </p>
 
       </div>
 
 
-      <!-- Card 3: Logo Test -->
+
+      <!-- LOGO -->
+
       <div class="card visual-card">
 
         <div class="image-placeholder">
+
           <img
             src="BrickBrain logo.png"
             alt="BrickBrain Logo Variant 1"
             class="demo-image">
+
         </div>
 
-        <h4>Logo Test 1</h4>
+
+        <h4>
+          Logo Test 1
+        </h4>
+
 
         <p>
-          This design test is evaluating color contrast and icon balance for the
-          branding assets between technology and LEGO.
+
+          This design test is evaluating color contrast and icon balance
+          for the branding assets between technology and LEGO.
+
         </p>
 
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- CONTACT -->
-  <section id="contact" class="section fade-in">
-    <h2>Connect with Me</h2>
+
+  <!-- =========================================
+       CONTACT
+  ========================================== -->
+
+  <section
+    id="contact"
+    class="section fade-in">
+
+    <h2>
+      Connect with Me
+    </h2>
+
 
     <div class="card">
 
       <p>
+
         Reach out for collaboration or feedback on BrickBrain.
+
       </p>
 
+
       <div class="social-badges">
+
+
+        <!-- EMAIL -->
 
         <a
           href="mailto:JRODRIGUEZRAYA87081@uat.edu"
           class="badge-link">
+
           Email
+
         </a>
+
+
+        <!-- GITHUB -->
 
         <a
           href="https://github.com/2JuanRodriguez3"
           target="_blank"
           rel="noopener noreferrer"
           class="badge-link">
+
           GitHub
+
         </a>
+
+
+        <!-- LINKEDIN -->
 
         <a
           href="https://www.linkedin.com/in/juan-rodriguez-076572353/"
           target="_blank"
           rel="noopener noreferrer"
           class="badge-link">
+
           LinkedIn
+
         </a>
 
       </div>
 
 
+
+      <!-- CONTACT FORM -->
+
       <form
         class="contact-form"
         onsubmit="event.preventDefault(); alert('Message sent!');">
+
 
         <input
           type="text"
           placeholder="Name"
           required>
 
+
         <input
           type="email"
           placeholder="Email"
           required>
 
+
         <textarea
           placeholder="Message"
           required></textarea>
 
+
         <button type="submit">
+
           Send
+
         </button>
 
       </form>
 
     </div>
+
   </section>
 
 
-  <!-- FOOTER -->
+
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+
   <footer>
-    <p>&copy; 2026 Juan Rodriguez | BrickBrain</p>
+
+    <p>
+      &copy; 2026 Juan Rodriguez | BrickBrain
+    </p>
+
   </footer>
 
 
-  <!-- LIGHTBOX -->
+
+  <!-- =========================================
+       LIGHTBOX
+  ========================================== -->
+
   <div
     id="lightbox"
     class="lightbox"
     onclick="this.classList.remove('active')">
+
 
     <img
       id="lightbox-img"
@@ -342,8 +744,14 @@
   </div>
 
 
-  <!-- JAVASCRIPT -->
+
+  <!-- =========================================
+       JAVASCRIPT
+  ========================================== -->
+
   <script src="script.js"></script>
 
+
 </body>
+
 </html>
