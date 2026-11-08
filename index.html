@@ -66,6 +66,20 @@
     .objective-card .evidence span { opacity: .7; }
     @media (max-width: 700px) { .objective-card { padding: 20px; } }
 
+
+    /* November 8 SIP409 update: yellow-highlighted new progress */
+    .inventory-update-highlight {
+      border: 2px solid #e7b641;
+      box-shadow: 0 0 0 1px rgba(231,182,65,.18);
+    }
+    .inventory-update-highlight .progress-date {
+      color: #e7b641;
+    }
+    .inventory-update-highlight .progress-update {
+      border-left: 4px solid #e7b641;
+      padding-left: 14px;
+    }
+
   </style>
 
 </head>
@@ -338,6 +352,29 @@
     </h2>
 
 
+
+    <!-- =====================================
+         NOVEMBER 8, 2026 INVENTORY UPDATE
+    ====================================== -->
+
+    <div class="card progress-card inventory-update-highlight">
+      <h3 class="progress-date">November 8, 2026 – Inventory System Completed</h3>
+
+      <p class="progress-update">
+        I have finished developing and polishing the Inventory System for BrickBrain and connected it with the Adaptive Challenge System. Users can now add, edit, remove, and organize their LEGO pieces by name, category, and quantity. The system will also look into the user's pieces and allow users to search and filter through their saved pieces.
+      </p>
+
+      <p class="progress-update">
+        I tested the system by adding 50 LEGO pieces across 7 different entries and 3 categories, and seeing if the system recognized it, which it did. The Inventory System can now help BrickBrain generate personalized challenges based on the user's available pieces. My next steps are to continue testing and finishing the other pages and prepare for my final SIP Showcase presentation.
+      </p>
+
+      <div class="progress-images">
+        <div class="progress-image-item">
+          <img src="1INV.png" alt="BrickBrain Inventory System showing 50 LEGO pieces across 7 entries and 3 categories" class="demo-image">
+          <p class="image-caption">Appendix F – BrickBrain Inventory System (1INV.png)</p>
+        </div>
+      </div>
+    </div>
 
     <!-- =====================================
          SEPTEMBER 26 UPDATE
