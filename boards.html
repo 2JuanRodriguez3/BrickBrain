@@ -8,7 +8,16 @@
   <style>
     :root { color-scheme: dark; --bg:#0c1220; --panel:#151f31; --panel2:#1b2940; --text:#f2f6fc; --muted:#b4c1d3; --accent:#f4c95d; --line:#34445b; }
     * {box-sizing:border-box} html {scroll-behavior:smooth} body {margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif} a{color:var(--accent)} a:focus-visible{outline:3px solid var(--accent);outline-offset:3px} .wrap{width:min(1100px,92%);margin:auto} header{border-bottom:1px solid var(--line);background:#101a2b} .nav{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:18px 0}.brand{font-weight:800;font-size:1.2rem;color:var(--text);text-decoration:none}.navlinks{display:flex;gap:18px;flex-wrap:wrap}.navlinks a{text-decoration:none}.navlinks a[aria-current="page"]{font-weight:700;border-bottom:2px solid var(--accent)} .hero{padding:55px 0 30px}.eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:.13em;font-weight:700;font-size:.85rem}h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.15;margin:10px 0}h2{font-size:1.65rem;line-height:1.3}h3{font-size:1.16rem;margin:0 0 8px}.muted{color:var(--muted)}.jump{display:flex;flex-wrap:wrap;gap:10px;margin:25px 0 10px}.jump a{border:1px solid var(--line);border-radius:8px;padding:8px 13px;text-decoration:none;background:var(--panel)}section.objective{margin:30px 0;padding:28px;border:1px solid var(--line);border-radius:16px;background:var(--panel)}.number{color:var(--accent);font-weight:800;letter-spacing:.08em}.statement{font-size:1.12rem;font-weight:600}.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:18px;margin-top:20px}.project{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:20px}.evidence{border:1px dashed #788aa2;border-radius:10px;padding:14px;margin-top:16px;color:var(--muted);font-size:.94rem}.evidence strong{color:var(--text)}.proof-gallery{display:grid;grid-template-columns:1fr;gap:14px;margin:18px 0}.proof-gallery figure{margin:0}.proof-gallery img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#fff}.proof-gallery figcaption{font-size:.87rem;color:var(--muted);margin-top:6px}.evidence-links{padding-left:20px;margin:8px 0}.evidence-links li{margin:4px 0}.placeholder{padding:15px;border-left:3px solid var(--accent);background:var(--panel2);border-radius:6px}.tag{font-size:.82rem;color:var(--accent);font-weight:700;text-transform:uppercase}footer{padding:35px 0;color:var(--muted);border-top:1px solid var(--line)}@media(max-width:600px){section.objective{padding:19px}}
-  </style>
+  
+    .proof-gallery img { cursor: zoom-in; }
+    .lightbox-trigger { display:block; width:100%; padding:0; border:0; background:transparent; border-radius:8px; cursor:zoom-in; }
+    .lightbox-trigger:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
+    #image-lightbox { position:fixed; inset:0; width:100%; height:100%; max-width:none; max-height:none; margin:0; padding:52px 16px 20px; border:0; background:rgba(5,9,16,.96); color:#fff; }
+    #image-lightbox[open] { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; }
+    #image-lightbox img { max-width:100%; max-height:calc(100dvh - 125px); object-fit:contain; cursor:default; }
+    #lightbox-caption { text-align:center; margin:0; }
+    #lightbox-close { position:absolute; top:12px; right:16px; background:var(--panel2); color:white; border:1px solid var(--line); border-radius:8px; padding:8px 16px; font:inherit; cursor:pointer; }
+</style>
 </head>
 <body>
 <header><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="index.html">BrickBrain</a><div class="navlinks"><a href="index.html">Main website</a><a href="boards.html" aria-current="page">Boards</a></div></nav></header>
@@ -105,4 +114,40 @@
 <div class="evidence"><strong>Project evidence</strong><div class="proof-gallery"><figure><img src="1Inve.png" alt="JavaScript BrickBrainInventory object with localStorage, arrays and category calculations" loading="lazy"><figcaption>Figure 23. JavaScript arrays and objects used to save, load, and organize LEGO inventory information.</figcaption></figure><figure><img src="2Inve.png" alt="JavaScript renderInventory function with search and category filtering" loading="lazy"><figcaption>Figure 24. JavaScript search and filtering logic used to display matching LEGO inventory entries.</figcaption></figure></div></div></article>
 </div></section>
 </main><footer><div class="wrap">Juan Rodriguez · Advanced Computer Science Boards · University of Advancing Technology</div></footer>
+
+<dialog id="image-lightbox" aria-label="Enlarged project evidence">
+  <button id="lightbox-close" type="button" autofocus>Close &times;</button>
+  <img id="lightbox-image" alt="">
+  <p id="lightbox-caption"></p>
+</dialog>
+<script>
+  const lightbox = document.getElementById('image-lightbox');
+  const enlarged = document.getElementById('lightbox-image');
+  const caption = document.getElementById('lightbox-caption');
+  let opener;
+  document.querySelectorAll('.proof-gallery img').forEach(image => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'lightbox-trigger';
+    button.setAttribute('aria-label', 'Enlarge: ' + image.alt);
+    image.before(button);
+    button.append(image);
+    button.addEventListener('click', () => {
+      opener = button;
+      enlarged.src = image.currentSrc || image.src;
+      enlarged.alt = image.alt;
+      caption.textContent = image.closest('figure')?.querySelector('figcaption')?.textContent || image.alt;
+      lightbox.showModal();
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  document.getElementById('lightbox-close').addEventListener('click', () => lightbox.close());
+  lightbox.addEventListener('click', event => {
+    if (event.target === lightbox) lightbox.close();
+  });
+  lightbox.addEventListener('close', () => {
+    document.body.style.overflow = '';
+    opener?.focus({preventScroll:true});
+  });
+</script>
 </body></html>
